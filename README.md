@@ -53,6 +53,7 @@ git clone https://github.com/neurosim/DNN_NeuroSim_V2.1.git
 ## Results
 - The recent model weights (from training) can be found in 'latest.pth' file under log directory (*./log/default/ADCprecision=5/.../latest.pth*)
 - Hardware performance for each epoch is captured under *./NeuroSim_Results_Each_Epoch* folder
+  ![Results each epoch](./sample_outputs/Results_EachEpoch.png)
 - Also the layer-wise cumulative training performance is displayed on the screen as well as under the log folder (*./log/default/ADCprecision=5/.../ \*.log*)
 - Similarly the inference performance can be found under the log directory((*./log/default/ADCprecision=6/.../ \*.log*)
 
