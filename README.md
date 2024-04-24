@@ -76,12 +76,46 @@ User defined hardware parameters from 'Param.cpp' file.
   tileBufferCoreSizeCol = 32;
   ```
 - Weight mapping types
+  ```
+  novelMapping = true;	     // false: conventional mapping
+  			     // true: novel mapping
+  ```
 - ADC variants
+  ```
+  SARADC = false;              // false: MLSA
+  			     // true: sar ADC
+  currentMode = true;          // false: MLSA use VSA
+  			     // true: MLSA use CSA
+  ```
 - Technology node and wire width
+  ```
+  technode = 32;                // Technology
+  			      // technode: 130, 90 --> wireWidth: 200
+  			      // technode: 65      --> wireWidth: 100
+  			      // technode: 45      --> wireWidth: 50
+  			      // technode: 32      --> wireWidth: 40
+  			      // technode: 22      --> wireWidth: 32
+  			      // technode: 14      --> wireWidth: 22
+  			      // technode: 10, 7   --> wireWidth: 14
+  featuresize = 40e-9;          // Wire width for subArray simulation
+  wireWidth = 40;               // wireWidth of the cell for Accuracy calculation
+  ```
 - Sub array size
+  ```
+
+  ```
 - SRAM parameters
+  ```
+
+  ```
 - Parameters for analog synaptic devices
+  ```
+
+  ```
 - Design options for on-chip training
+  ```
+
+  ```
 
 ## Results
 - The recent model weights (from training) can be found in 'latest.pth' file under log directory (*./log/default/ADCprecision=5/.../latest.pth*)
