@@ -23,11 +23,53 @@ pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2
 ```
 
 ## Installation
-Get the tool from github.
+Get the tool from github
 ```
-pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2
+git clone https://github.com/In-Memory-Computing/DNN_NeuroSim.git
 ```
-The tool can also be cloned from original repository.
+The tool can also be cloned from original repository
 ```
 git clone https://github.com/neurosim/DNN_NeuroSim_V2.1.git
 ```
+
+## Execution Steps
+1. Set up hardware parameters in NeuroSim Core (*./NeuroSIM/Param.cpp*) and compile the Code.
+   ```
+   make
+   ```
+2. Define the network structure in Network.csv file. (*./NeuroSIM/Network.csv*). Example: VGG8(Default)
+   
+3. Set up hardware constraints in Python wrapper (train.py)   
+
+4. Run Pytorch wrapper integrated with NeuroSim (for online-training performance)
+   ```
+   python train.py
+   ```
+   For inference, set the 'model_path' variable inside inference.py file to the most recent trained weights file and run the wrapper.
+   ```
+   python inference.py
+   ```
+
+## Results
+- The recent model weights (from training) can be found in 'latest.pth' file under log directory (*./log/default/ADCprecision=5/.../latest.pth*)
+- Hardware performance for each epoch is captured under *./NeuroSim_Results_Each_Epoch* folder
+- Also the layer-wise cumulative training performance is displayed on the screen as well as under the log folder (*./log/default/ADCprecision=5/.../ \*.log*)
+- Similarly the inference performance can be found under the log directory((*./log/default/ADCprecision=6/.../ \*.log*)
+
+## Hardware parameters
+User defined hardware parameters from 'Param.cpp' file.
+
+-
+
+## References
+- X. Peng, S. Huang, Y. Luo, X. Sun and S. Yu, " DNN+NeuroSim: An end-to-end benchmarking framework for compute-in-memory accelerators with versatile device technologies," IEEE International Electron Devices Meeting (IEDM), 2019.
+- X. Peng, S. Huang, H. Jiang, A. Lu and S. Yu, “DNN+ NeuroSim V2.0: An End-to-End Benchmarking Framework for Compute-in-Memory Accelerators for Training,” arXiv, 2020. 
+- S. Wu, et al. "Training and inference with integers in deep neural networks," arXiv: 1802.04680, 2018. 
+- A. Lu, X. Peng, W. Li, H. Jiang, A. Lu and S. Yu, “NeuroSim Simulator for Compute-in-Memory Hardware Accelerator: Validation and Benchmark,” IEEE, 2021. 
+- Repository:
+  https://github.com/neurosim/DNN_NeuroSim_V2.1
+- Installation Tutorial:
+  https://www.youtube.com/watch?v=pdT9NCn1L44&t=735s
+- User Manual:
+  https://github.com/neurosim/DNN_NeuroSim_V2.1/blob/master/Documents/DNN%20NeuroSim%20V2.1%20User%20Manual.pdf
+
