@@ -144,7 +144,7 @@ User defined hardware parameters from 'Param.cpp' file.
 ## Results
 - The recent model weights (from training) can be found in 'latest.pth' file under log directory (*./log/default/ADCprecision=5/.../latest.pth*)
 - Hardware performance for each epoch is captured under *./NeuroSim_Results_Each_Epoch* folder
-  ![Results each epoch](./sample_outputs/Results_Epoch.png)
+  ![Results each epoch](./sample_outputs/Results_Folder.png)
 - Also the layer-wise cumulative training performance is displayed on the screen as well as under the log folder (*./log/default/ADCprecision=5/.../ \*.log*)
   
      ```
