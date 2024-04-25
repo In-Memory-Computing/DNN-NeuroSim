@@ -102,19 +102,43 @@ User defined hardware parameters from 'Param.cpp' file.
   ```
 - Sub array size
   ```
-
+  numRowSubArray = 128;               // # of rows in single subArray
+  numColSubArray = 128;               // # of columns in single subArray
   ```
 - SRAM parameters
   ```
-
+  heightInFeatureSizeSRAM = 8;        // SRAM Cell height in feature size
+  widthInFeatureSizeSRAM = 20;        // SRAM Cell width in feature size
+  widthSRAMCellNMOS = 2.08;
+  widthSRAMCellPMOS = 1.23;
+  widthAccessCMOS = 1.31;
+  minSenseVoltage = 0.1;
   ```
 - Parameters for analog synaptic devices
   ```
-
+  heightInFeatureSize1T1R = 4;          // 1T1R Cell height in feature size
+  widthInFeatureSize1T1R = 4;           // 1T1R Cell width in feature size
+  heightInFeatureSizeCrossbar = 2;      // Crossbar Cell height in feature size
+  widthInFeatureSizeCrossbar = 2;       // Crossbar Cell width in feature size
+  resistanceOn = 240e3;                 // Ron resistance at Vr in the reported measurement
+  resistanceOff = 240e3*100;            // Roff resistance at Vr in the reported measurement
+  gateCapFeFET = 2.1717e-18;	      // Gate capacitance of FeFET (F)
+  polarization = 20;                    // polarization of FeFET (uC/cm^2)
+  writePulseWidth = 50e-9;
+  nonlinearIV = false; 		     // This option is to consider I-V nonlinearity in cross-point array
+  nonlinearity = 10; 		     // This is the nonlinearity for the current ratio at Vw and Vw/2
   ```
 - Design options for on-chip training
   ```
-
+  trainingEstimation = true; 	    // false: only run estimation for inference chip
+  batchSize = 200;                    // batchSize in training
+  numIteration = 250;                 // num of iteration for one epoch
+  numRowSubArrayWG = 128;             // # of rows of single SRAM subArray in "gradient calculation of weight"
+  numColSubArrayWG = 128;             // # of columns of single SRAM subArray in "gradient calculation of weight"
+  numRowMuxedAG = 8;                  // How many columns share 1 ADC (for Transpose array) in transpose subarray (gradient calculation of activation)
+  levelOutputAG = 64;                 // # of levels of the multilevelSenseAmp output, in transpose subarray
+  numRowMuxedWG = 8;                  // How many columns share 1 ADC (for Transpose array) in gradient calculation of weight
+  levelOutputWG = 16;                 // # of levels of the multilevelSenseAmp output, in gradient calculation of weight
   ```
 
 ## Results
